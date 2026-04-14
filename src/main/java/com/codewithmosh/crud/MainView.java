@@ -9,6 +9,7 @@ import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.textfield.IntegerField;
 import com.vaadin.flow.component.textfield.NumberField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
@@ -19,6 +20,7 @@ public class MainView extends VerticalLayout {
     private final TextField nombre = new TextField("Nombre");
     private final NumberField precioUnitario = new NumberField("Precio unitario");
     private final ComboBox<CategoriaProducto> categoria = new ComboBox<>("Categoria");
+    private final IntegerField cantidad = new IntegerField("Cantidad");
     private final ComboBox<UnidadMedida> unidadMedida = new ComboBox<>("Unidad de medida");
     private final Button guardar = new Button("Guardar");
     private final Button nuevo = new Button("Nuevo");
@@ -36,6 +38,7 @@ public class MainView extends VerticalLayout {
                 nombre,
                 precioUnitario,
                 categoria,
+                cantidad,
                 unidadMedida,
                 new HorizontalLayout(guardar, nuevo, eliminar, actualizar),
                 grid
@@ -48,6 +51,7 @@ public class MainView extends VerticalLayout {
         nombre.setWidthFull();
         precioUnitario.setWidthFull();
         categoria.setWidthFull();
+        cantidad.setWidthFull();
         unidadMedida.setWidthFull();
         setSizeFull();
     }
@@ -56,6 +60,7 @@ public class MainView extends VerticalLayout {
         grid.addColumn(Producto::getNombre).setHeader("Nombre");
         grid.addColumn(Producto::getPrecioUnitario).setHeader("Precio");
         grid.addColumn(Producto::getCategoria).setHeader("Categoria");
+        grid.addColumn(Producto::getCantidad).setHeader("Cantidad");
         grid.addColumn(Producto::getUnidadMedida).setHeader("Unidad de medida");
         grid.setWidthFull();
         grid.setHeight("350px");
@@ -79,10 +84,11 @@ public class MainView extends VerticalLayout {
         }
         Producto producto = productoSeleccionado != null
                 ? productoSeleccionado
-                : new Producto(null, "", 0, null, null);
+                : new Producto(null, "", 0, null, 0, null);
         producto.setNombre(nombre.getValue());
         producto.setPrecioUnitario(precioUnitario.getValue());
         producto.setCategoria(categoria.getValue());
+        producto.setCantidad(cantidad.getValue());
         producto.setUnidadMedida(unidadMedida.getValue());
         if (producto.getId_producto() == null) {
             productoService.save(producto);
@@ -119,6 +125,7 @@ public class MainView extends VerticalLayout {
                 nombre.getValue(),
                 precioUnitario.getValue(),
                 categoria.getValue(),
+                cantidad.getValue(),
                 unidadMedida.getValue()
         );
         productoService.update(productoSeleccionado.getId_producto(), productoActualizado);

@@ -51,6 +51,7 @@ public class ProductoRepository {
         existente.setPrecioUnitario(productoActualizado.getPrecioUnitario());
         existente.setCategoria(productoActualizado.getCategoria());
         existente.setUnidadMedida(productoActualizado.getUnidadMedida());
+        existente.setCantidad(productoActualizado.getCantidad());
         productos.put(id, existente);
         return Optional.of(existente);
     }

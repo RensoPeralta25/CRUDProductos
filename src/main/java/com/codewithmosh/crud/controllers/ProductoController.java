@@ -39,8 +39,9 @@ public class ProductoController {
                                            @RequestBody @Valid String nombre,
                                            @RequestBody @Valid double precioUnitario,
                                            @RequestBody @Valid CategoriaProducto categoria,
+                                           @RequestBody @Valid int cantidad,
                                            @RequestBody @Valid UnidadMedida unidadMedida) {
-        Producto neoProducto = new Producto(id_producto,nombre,precioUnitario,categoria,unidadMedida);
+        Producto neoProducto = new Producto(id_producto,nombre,precioUnitario,categoria,cantidad,unidadMedida);
         productoService.save(neoProducto);
         URI location = URI.create("/api/productos/" + id_producto);
         return ResponseEntity.created(location).body(neoProducto);
@@ -54,8 +55,9 @@ public class ProductoController {
             @RequestBody @Valid String nombre,
             @RequestBody @Valid double precioUnitario,
             @RequestBody @Valid CategoriaProducto categoria,
+            @RequestBody @Valid int cantidad,
             @RequestBody @Valid UnidadMedida unidadMedida) {
-        Producto productoAct = new Producto(id_producto,nombre,precioUnitario,categoria,unidadMedida);
+        Producto productoAct = new Producto(id_producto,nombre,precioUnitario,categoria,cantidad, unidadMedida);
         productoService.update(id, productoAct);
         return ResponseEntity.ok(productoAct);
     }

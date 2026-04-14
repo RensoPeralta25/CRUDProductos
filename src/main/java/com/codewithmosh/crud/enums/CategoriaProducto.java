@@ -5,5 +5,5 @@ public enum CategoriaProducto {
     MEDICAMENTO,
     MATERIA_PRIMA,
     PRODUCTOS_VARIOS,
-    SERVICIO;
+    //SERVICIO;
 }
