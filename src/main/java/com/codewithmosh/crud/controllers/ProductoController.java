@@ -44,14 +44,6 @@ public class ProductoController {
         return ResponseEntity.ok(productoService.update(id, producto));
     }
 
-    //editar parcial
-    @PatchMapping("/{id}")
-    public ResponseEntity<Producto> partialUpdate(
-            @PathVariable Long id,
-            @RequestBody Map<String, Object> campos) {
-        return ResponseEntity.ok(productoService.partialUpdate(id, campos));
-    }
-
     //eliminar
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
