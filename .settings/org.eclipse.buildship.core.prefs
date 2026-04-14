@@ -1,0 +1,13 @@
+arguments=--init-script /Users/renso_peralta/.cache/opencode/bin/jdtls/config_mac/org.eclipse.osgi/59/0/.cp/gradle/init/init.gradle
+auto.sync=false
+build.scans.enabled=false
+connection.gradle.distribution=GRADLE_DISTRIBUTION(WRAPPER)
+connection.project.dir=
+eclipse.preferences.version=1
+gradle.user.home=
+java.home=/Users/renso_peralta/Library/Java/JavaVirtualMachines/openjdk-25.0.2/Contents/Home
+jvm.arguments=
+offline.mode=false
+override.workspace.settings=true
+show.console.view=true
+show.executions.view=true

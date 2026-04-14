@@ -1,0 +1,18 @@
+{
+  "productionMode" : false,
+  "eagerServerLoad" : false,
+  "npmFolder" : "/Users/renso_peralta/Desktop/PUCMM/Cuatrimestre Ene.-Abril. 2026/Arquitectura de Software/crud",
+  "node.version" : "v24.14.0",
+  "node.download.root" : "https://nodejs.org/dist/",
+  "frontendFolder" : "/Users/renso_peralta/Desktop/PUCMM/Cuatrimestre Ene.-Abril. 2026/Arquitectura de Software/crud/./src/main/frontend",
+  "connect.javaSourceFolder" : "/Users/renso_peralta/Desktop/PUCMM/Cuatrimestre Ene.-Abril. 2026/Arquitectura de Software/crud/src/main/java",
+  "javaResourceFolder" : "/Users/renso_peralta/Desktop/PUCMM/Cuatrimestre Ene.-Abril. 2026/Arquitectura de Software/crud/src/main/resources",
+  "connect.applicationProperties" : "/Users/renso_peralta/Desktop/PUCMM/Cuatrimestre Ene.-Abril. 2026/Arquitectura de Software/crud/src/main/resources/application.properties",
+  "connect.openApiFile" : "/Users/renso_peralta/Desktop/PUCMM/Cuatrimestre Ene.-Abril. 2026/Arquitectura de Software/crud/build/generated-resources/openapi.json",
+  "project.frontend.generated" : "/Users/renso_peralta/Desktop/PUCMM/Cuatrimestre Ene.-Abril. 2026/Arquitectura de Software/crud/./src/main/frontend/generated",
+  "pnpm.enable" : false,
+  "bun.enable" : false,
+  "require.home.node" : false,
+  "build.folder" : "build",
+  "react.enable" : true
+}
