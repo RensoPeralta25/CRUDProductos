@@ -8,13 +8,13 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Producto {
-    private int id_producto;
+    private Long id_producto;
     private String nombre;
     private double precioUnitario;
     private CategoriaProducto categoria;
     private UnidadMedida unidadMedida;
 
-    public Producto (int id, String nombre, double precioUnitario, CategoriaProducto categoria, UnidadMedida unidadMedida) {
+    public Producto (Long id, String nombre, double precioUnitario, CategoriaProducto categoria, UnidadMedida unidadMedida) {
         this.id_producto = id;
         this.nombre = nombre;
         this.precioUnitario = precioUnitario;
