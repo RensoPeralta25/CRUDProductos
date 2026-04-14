@@ -1,0 +1,95 @@
+# ────────────────────────────────────────
+#  IntelliJ IDEA
+# ────────────────────────────────────────
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# ────────────────────────────────────────
+#  Gradle
+# ────────────────────────────────────────
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+gradle-app.setting
+gradlew
+gradlew.bat
+
+# Cache de dependencias
+.gradle-cache/
+
+# ────────────────────────────────────────
+#  Spring Boot
+# ────────────────────────────────────────
+
+# Archivos de configuración con secretos
+application-local.properties
+application-local.yml
+application-secret*.properties
+application-secret*.yml
+
+# Archivos generados en tiempo de ejecución
+*.log
+logs/
+spring.log
+
+# ────────────────────────────────────────
+#  Vaadin
+# ────────────────────────────────────────
+
+# Archivos generados por Vaadin en desarrollo
+node_modules/
+pnpm-lock.yaml
+package-lock.json
+webpack.config.js
+webpack.generated.js
+vite.config.ts
+vite.generated.ts
+
+# Carpeta de producción generada
+src/main/bundles/
+src/main/webapp/VAADIN/
+
+# Archivos de herramientas frontend de Vaadin
+.pnpm-store/
+.npmrc
+
+# ────────────────────────────────────────
+#  Java
+# ────────────────────────────────────────
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+hs_err_pid*
+replay_pid*
+
+# ────────────────────────────────────────
+#  Sistema operativo
+# ────────────────────────────────────────
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# ────────────────────────────────────────
+#  Variables de entorno
+# ────────────────────────────────────────
+.env
+.env.*
+!.env.example
