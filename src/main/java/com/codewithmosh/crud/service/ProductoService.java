@@ -9,7 +9,11 @@ import java.util.List;
 @Service
 public class ProductoService {
 
-    public ProductoService(){ }
+    private ProductoRepository productoRepository;
+
+    public ProductoService(ProductoRepository productoRepository){
+        this.productoRepository = productoRepository;
+    }
 
     public List<Producto> findAll(){
         return ProductoRepository.getInstancia().findAll();
