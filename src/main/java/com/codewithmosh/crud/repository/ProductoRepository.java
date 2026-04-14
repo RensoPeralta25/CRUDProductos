@@ -11,6 +11,19 @@ import java.util.concurrent.atomic.AtomicLong;
 public class ProductoRepository {
     private final Map<Long, Producto> productos = new HashMap<>();
     private final AtomicLong sequence = new AtomicLong(0);
+    private static ProductoRepository instancia;
+
+    public static ProductoRepository getInstancia () {
+        if (instancia == null) {
+            instancia = new ProductoRepository();
+        }
+        return instancia;
+    }
+
+    private ProductoRepository () {
+
+    }
+
 
     public List<Producto> findAll() {
         return new ArrayList<>(productos.values());
@@ -27,6 +40,19 @@ public class ProductoRepository {
 
         productos.put(producto.getId_producto(), producto);
         return producto;
+    }
+
+    public Optional<Producto> update(Long id, Producto productoActualizado) {
+        Producto existente = productos.get(id);
+        if (existente == null) {
+            return Optional.empty();
+        }
+        existente.setNombre(productoActualizado.getNombre());
+        existente.setPrecioUnitario(productoActualizado.getPrecioUnitario());
+        existente.setCategoria(productoActualizado.getCategoria());
+        existente.setUnidadMedida(productoActualizado.getUnidadMedida());
+        productos.put(id, existente);
+        return Optional.of(existente);
     }
 
     public void deleteById(Long id) {
