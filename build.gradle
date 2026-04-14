@@ -29,6 +29,8 @@ dependencies {
     implementation 'com.vaadin:vaadin-spring-boot-starter'
     testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    compileOnly("org.projectlombok:lombok:latest.release")
+    annotationProcessor("org.projectlombok:lombok:latest.release")
 }
 
 dependencyManagement {
