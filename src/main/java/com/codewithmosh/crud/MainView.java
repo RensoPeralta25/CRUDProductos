@@ -20,7 +20,7 @@ public class MainView extends VerticalLayout {
     private final TextField nombre = new TextField("Nombre");
     private final NumberField precioUnitario = new NumberField("Precio unitario");
     private final ComboBox<CategoriaProducto> categoria = new ComboBox<>("Categoria");
-    private final IntegerField cantidad = new IntegerField("Cantidad");
+    private final IntegerField cantidad = new IntegerField("Presentación");
     private final ComboBox<UnidadMedida> unidadMedida = new ComboBox<>("Unidad de medida");
     private final Button guardar = new Button("Guardar");
     private final Button nuevo = new Button("Nuevo");
@@ -60,7 +60,7 @@ public class MainView extends VerticalLayout {
         grid.addColumn(Producto::getNombre).setHeader("Nombre");
         grid.addColumn(Producto::getPrecioUnitario).setHeader("Precio");
         grid.addColumn(Producto::getCategoria).setHeader("Categoria");
-        grid.addColumn(Producto::getCantidad).setHeader("Cantidad");
+        grid.addColumn(Producto::getCantidad).setHeader("Presentación");
         grid.addColumn(Producto::getUnidadMedida).setHeader("Unidad de medida");
         grid.setWidthFull();
         grid.setHeight("350px");
