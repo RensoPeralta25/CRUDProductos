@@ -21,7 +21,7 @@ public class MainView extends VerticalLayout {
     private final ProductoService productoService;
     private final TextField nombre = new TextField("Nombre");
     private final NumberField precioUnitario = new NumberField("Precio unitario");
-    private final IntegerField cantidad = new IntegerField("Presentación");
+    private final IntegerField presentacion = new IntegerField("Presentación");
     private final ComboBox<CategoriaProducto> categoria = new ComboBox<>("Categoria");
     private final ComboBox<UnidadMedida> unidadMedida = new ComboBox<>("Unidad de medida");
     private final Button guardar = new Button("Guardar");
@@ -40,7 +40,7 @@ public class MainView extends VerticalLayout {
         add(
                 nombre,
                 precioUnitario,
-                cantidad,
+                presentacion,
                 categoria,
                 unidadMedida,
                 new HorizontalLayout(guardar, nuevo, eliminar),
@@ -56,10 +56,10 @@ public class MainView extends VerticalLayout {
 
         nombre.setWidthFull();
         precioUnitario.setWidthFull();
-        cantidad.setWidthFull();
+        presentacion.setWidthFull();
         categoria.setWidthFull();
         unidadMedida.setWidthFull();
-        cantidad.setMin(0);
+        presentacion.setMin(0);
 
         setSizeFull();
     }
@@ -68,7 +68,7 @@ public class MainView extends VerticalLayout {
         grid.addColumn(Producto::getId_producto).setHeader("ID");
         grid.addColumn(Producto::getNombre).setHeader("Nombre");
         grid.addColumn(Producto::getPrecioUnitario).setHeader("Precio");
-        grid.addColumn(Producto::getCantidad).setHeader("Presentación");
+        grid.addColumn(Producto::getPresentacion).setHeader("Presentación");
         grid.addColumn(Producto::getCategoria).setHeader("Categoria");
         grid.addColumn(Producto::getUnidadMedida).setHeader("Unidad de medida");
         grid.setWidthFull();
@@ -100,7 +100,7 @@ public class MainView extends VerticalLayout {
 
         producto.setNombre(nombre.getValue());
         producto.setPrecioUnitario(precioUnitario.getValue());
-        producto.setCantidad(cantidad.getValue());
+        producto.setPresentacion(presentacion.getValue());
         producto.setCategoria(categoria.getValue());
         producto.setUnidadMedida(unidadMedida.getValue());
 
@@ -131,7 +131,7 @@ public class MainView extends VerticalLayout {
     private void cargarFormulario(Producto producto) {
         nombre.setValue(producto.getNombre() != null ? producto.getNombre() : "");
         precioUnitario.setValue(producto.getPrecioUnitario());
-        cantidad.setValue(producto.getCantidad());
+        presentacion.setValue(producto.getPresentacion());
         categoria.setValue(producto.getCategoria());
         unidadMedida.setValue(producto.getUnidadMedida());
     }
@@ -144,7 +144,7 @@ public class MainView extends VerticalLayout {
         productoSeleccionado = null;
         nombre.clear();
         precioUnitario.clear();
-        cantidad.clear();
+        presentacion.clear();
         categoria.clear();
         unidadMedida.clear();
         grid.deselectAll();
@@ -153,7 +153,7 @@ public class MainView extends VerticalLayout {
     private boolean formularioValido() {
         return !nombre.isEmpty()
                 && precioUnitario.getValue() != null
-                && cantidad.getValue() != null
+                && presentacion.getValue() != null
                 && categoria.getValue() != null
                 && unidadMedida.getValue() != null;
     }

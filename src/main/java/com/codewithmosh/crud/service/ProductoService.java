@@ -35,7 +35,7 @@ public class ProductoService {
         existente.setNombre(productoActualizado.getNombre());
         existente.setPrecioUnitario(productoActualizado.getPrecioUnitario());
         existente.setCategoria(productoActualizado.getCategoria());
-        existente.setCantidad(productoActualizado.getCantidad());
+        existente.setPresentacion(productoActualizado.getPresentacion());
         existente.setUnidadMedida(productoActualizado.getUnidadMedida());
 
         return productoRepository.save(existente);

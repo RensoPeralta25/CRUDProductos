@@ -25,7 +25,7 @@ public class Producto {
     @Enumerated(EnumType.STRING)
     private CategoriaProducto categoria;
 
-    private int cantidad;
+    private int presentacion;
 
     @Enumerated(EnumType.STRING)
     private UnidadMedida unidadMedida;
@@ -33,12 +33,12 @@ public class Producto {
     public Producto() {
     }
 
-    public Producto(Long id, String nombre, double precioUnitario, CategoriaProducto categoria, int cantidad, UnidadMedida unidadMedida) {
+    public Producto(Long id, String nombre, double precioUnitario, CategoriaProducto categoria, int presentacion, UnidadMedida unidadMedida) {
         this.id_producto = id;
         this.nombre = nombre;
         this.precioUnitario = precioUnitario;
         this.categoria = categoria;
-        this.cantidad = cantidad;
+        this.presentacion = presentacion;
         this.unidadMedida = unidadMedida;
     }
 
@@ -74,12 +74,12 @@ public class Producto {
         this.categoria = categoria;
     }
 
-    public int getCantidad() {
-        return cantidad;
+    public int getPresentacion() {
+        return presentacion;
     }
 
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
+    public void setPresentacion(int presentacion) {
+        this.presentacion = presentacion;
     }
 
     public UnidadMedida getUnidadMedida() {
