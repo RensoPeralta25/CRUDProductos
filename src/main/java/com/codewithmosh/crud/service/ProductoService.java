@@ -1,6 +1,7 @@
 package com.codewithmosh.crud.service;
 
 import com.codewithmosh.crud.pojo.Producto;
+import com.codewithmosh.crud.repository.ProductoRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,35 +12,37 @@ public class ProductoService {
     public ProductoService(){ }
 
     public List<Producto> findAll(){
-        return ProductoRepository.getInstance().findAll();
+        return ProductoRepository.getInstancia().findAll();
     }
 
-    public void save(Producto producto) throws Exception {
+    public void save(Producto producto) {
         if(producto == null){
-            throw new Exception("Producto es nulo.");
+            IO.println("Producto es nulo.");
             return;
         }
-        ProductoRepository.getInstance().save(producto);
+        ProductoRepository.getInstancia().save(producto);
     }
 
     public void update(Long id, Producto productoActualizado){
-        ProductoRepository.getInstance().update(id, productoActualizado);
+        ProductoRepository.getInstancia().update(id, productoActualizado);
     }
 
-    public void deleteById(Long id) throws Exception {
-        Producto p = ProductoRepository.getInstance().findById(id)
+    public void deleteById(Long id){
+        Producto p = ProductoRepository.getInstancia().findById(id)
                 .orElse(null);
         if(p == null){
-            throw new Exception("Producto no existe.");
+            IO.println("Producto no existe.");
+            return;
         }
-        ProductoRepository.getInstance().deleteById(id);
+        ProductoRepository.getInstancia().deleteById(id);
     }
 
-    public Producto findById(Long id) throws Exception {
-        Producto p = ProductoRepository.getInstance().findById(id)
+    public Producto findById(Long id){
+        Producto p = ProductoRepository.getInstancia().findById(id)
                 .orElse(null);
         if(p == null){
-            throw new Exception("Producto no existe.");
+            IO.println("Producto no existe.");
+            return p;
         }
         return p;
     }
